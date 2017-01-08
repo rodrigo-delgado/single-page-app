@@ -2,10 +2,9 @@ var express = require('express')
 var expresshbs = require('express-handlebars')
 var path = require('path')
 var bodyParser = require('body-parser')
-var fs = require('fs')
 var routes = require('./routes')
 var app = express()
-var env = require('dotenv').config()
+
 
 // view engine setup
 app.engine('handlebars', expresshbs({defaultLayout: 'main'})) // makes the main page html file work.
