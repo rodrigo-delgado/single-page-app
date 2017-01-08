@@ -7,7 +7,13 @@ function grabResources(){
    .select('*')
 }
 
+function grabIndividualResource(id){
+  return knex('resources')
+  .select('*')
+  .where({resource_id: id})
+}
 
 module.exports = {
   grabResources,
+  grabIndividualResource
 }

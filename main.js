@@ -17,5 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/',routes.getIndex);
 app.get('/resource', routes.renderResourcesPage)
+app.get('/:id', routes.renderIndividualId)
 
 module.exports = app

@@ -13,8 +13,19 @@ function renderResourcesPage(req, res){
   })
 }
 
+function renderIndividualId(req, res) {
+  var id = req.params.id
+  db.grabIndividualResource(id)
+  .then(function(individualResource){
+
+
+    res.render('individual',individualResource[0])
+
+  })
+}
 
 module.exports = {
   getIndex,
   renderResourcesPage,
+  renderIndividualId
 }
