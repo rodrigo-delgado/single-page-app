@@ -16,6 +16,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 // stuff above are all setup type things
 
 app.get('/',routes.getIndex);
-
+app.get('/resource', routes.renderResourcesPage)
 
 module.exports = app
