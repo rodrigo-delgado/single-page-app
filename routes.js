@@ -6,7 +6,10 @@ function getIndex (req, res) {
 }
 
 function renderResourcesPage(req, res){
-  res.render('resource')
+  db.grabResources()
+  .then(function(){
+    res.render('resource')
+  })
 }
 
 
