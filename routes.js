@@ -24,8 +24,20 @@ function renderIndividualId(req, res) {
   })
 }
 
+function renderForm (req, res) {
+  res.render('form')
+}
+
+function addResourceToTable (req, res) {
+
+  console.log(req.body);
+  res.redirect('/resource')
+}
 module.exports = {
   getIndex,
   renderResourcesPage,
-  renderIndividualId
+  renderIndividualId,
+  renderForm,
+  addResourceToTable
+
 }
