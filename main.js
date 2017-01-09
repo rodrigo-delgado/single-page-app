@@ -12,14 +12,15 @@ app.set('view engine', 'handlebars') //causes the render function to work
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use('/', express.static(path.join(__dirname, 'public')))
 // stuff above are all setup type things
 
-app.get('/',routes.getIndex);
-app.get('/resource', routes.renderResourcesPage)
-app.get('/resource/form', routes.renderForm)
-app.get('/resource/:id', routes.renderIndividualId)
-app.post('/resource/', routes.addResourceToTable)
+// app.get('/',routes.getIndex);
+
+app.get('/api/v1/resources', routes.renderResourcesPage)
+app.get('/api/v1/resources/form', routes.renderForm)
+app.get('/api/v1/resources/:id', routes.renderIndividualId)
+app.post('/api/v1/resources/', routes.addResourceToTable)
 
 
 module.exports = app

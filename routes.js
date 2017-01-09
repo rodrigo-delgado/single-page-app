@@ -8,8 +8,7 @@ function getIndex (req, res) {
 function renderResourcesPage(req, res){
   db.grabResources()
   .then(function(resources){
-
-    res.render('resource', {"resources": resources})
+    res.json({data: resources})
   })
 }
 
@@ -17,7 +16,8 @@ function renderIndividualId(req, res) {
   var id = req.params.id
   db.grabIndividualResource(id)
   .then(function(individualResource){
-    res.render('individual',individualResource[0])
+    console.log(individualResource)
+    res.json(individualResource[0])
   })
 }
 
