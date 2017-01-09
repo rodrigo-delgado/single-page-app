@@ -13,8 +13,7 @@ function grabIndividualResource(id){
   .where({resource_id: id})
 }
 function addResourceToTable (data) {
-  delete data.submit
-  console.log(data);
+  
   return knex('resources')
   .insert(data)
 

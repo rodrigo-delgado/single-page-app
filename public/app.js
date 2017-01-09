@@ -2,11 +2,10 @@ console.log('it works!!!')
 
 //something to interact with it
 var source   = $("#names-template").html();
-console.log(source)
+
 var template = Handlebars.compile(source);
 
 document.addEventListener('DOMContentLoaded', function(e){
-  console.log("DOM loaded")
   $.get('api/v1/resources')
   .done(function(response){
     $('.container').append(template(response))
@@ -14,9 +13,7 @@ document.addEventListener('DOMContentLoaded', function(e){
 
   $('#submit').on("click", event => {
     event.preventDefault()
-    console.log(event)
+    var data = $('#form').serializeArray()
+    $.post("/api/v1/resources/", data)
   })
-
-
-
 })

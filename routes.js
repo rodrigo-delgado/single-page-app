@@ -26,8 +26,9 @@ function renderForm (req, res) {
 }
 
 function addResourceToTable (req, res) {
+  console.log(req.body);
   db.addResourceToTable(req.body)
-  res.redirect('/resource')
+  res.redirect('/api/v1/resources/')
 }
 module.exports = {
   getIndex,
