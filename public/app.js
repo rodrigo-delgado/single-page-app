@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function(e){
     var data = $('#form').serializeArray()
     $.post("/api/v1/resources/", data, function(res){
       console.log(res);
+      $('.container').empty()
       $('.container').append(template(res))
     })
   })
