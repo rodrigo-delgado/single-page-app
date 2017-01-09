@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function(e){
   $('#submit').on("click", event => {
     event.preventDefault()
     var data = $('#form').serializeArray()
-    $.post("/api/v1/resources/", data)
+    $.post("/api/v1/resources/", data, function(res){
+      console.log(res);
+      $('.container').append(template(res))
+    })
   })
 })

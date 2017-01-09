@@ -15,9 +15,9 @@ function grabIndividualResource(id){
 function addResourceToTable (data) {
   return knex.insert(data)
   .into("resources")
-  .then(function (id) {
-})
-
+  .then(function(id){
+    console.log(id)
+  })
 }
 
 module.exports = {
