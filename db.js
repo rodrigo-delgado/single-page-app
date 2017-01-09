@@ -12,8 +12,16 @@ function grabIndividualResource(id){
   .select('*')
   .where({resource_id: id})
 }
+function addResourceToTable (data) {
+  delete data.submit
+  console.log(data);
+  return knex('resources')
+  .insert(data)
+
+}
 
 module.exports = {
   grabResources,
-  grabIndividualResource
+  grabIndividualResource,
+  addResourceToTable
 }

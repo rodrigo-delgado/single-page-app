@@ -17,10 +17,7 @@ function renderIndividualId(req, res) {
   var id = req.params.id
   db.grabIndividualResource(id)
   .then(function(individualResource){
-
-
     res.render('individual',individualResource[0])
-
   })
 }
 
@@ -29,8 +26,7 @@ function renderForm (req, res) {
 }
 
 function addResourceToTable (req, res) {
-
-  console.log(req.body);
+  db.addResourceToTable(req.body)
   res.redirect('/resource')
 }
 module.exports = {
